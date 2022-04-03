@@ -4,7 +4,7 @@ module.exports = function override(config, env) {
     const loaders = config.module.rules.find(rule => Array.isArray(rule.oneOf)).oneOf;
     console.log(loaders);
     loaders[3] = {
-        test: /\.(js|mjs|jsx|ts|tsx)$/,
+        test: /\.(js|mjs|ts|tsx)$/,
         include: path.join(__dirname, 'src'),
         loader: 'esbuild-loader',
         options: {
