@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 function App() {
+
+  useEffect(()=>{
+    fetch('https://my-typescript-worker.zhaoleibaiupc1399.workers.dev/')
+    .then(responst => responst.json())
+    .then(data => console.log(data));
+  },[])
+
+
   return (
     <div className="App">
       <header className="App-header">
